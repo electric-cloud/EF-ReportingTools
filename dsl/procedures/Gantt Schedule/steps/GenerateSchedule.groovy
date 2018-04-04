@@ -1,7 +1,7 @@
 import groovy.xml.MarkupBuilder
 import groovy.json.*
 
-def ChartTitle = '$[ganttName]'?'$[ganttName]':'schedule'
+def ReportTitle = '$[reportName]'?'$[reportName]':'report'
 
 /* JSON Format:
 	[
@@ -47,7 +47,8 @@ html.omitEmptyAttributes = false
 html.omitNullAttributes = false
 html.html {
     head {
-        title (ChartTitle)
+        H1(ReportTitle)
+        title (ReportTitle)
         script (src: 'https://www.gstatic.com/charts/loader.js')
 		script ("""
 			google.charts.load('current', {'packages':['gantt']});

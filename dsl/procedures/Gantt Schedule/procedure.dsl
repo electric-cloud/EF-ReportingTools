@@ -4,9 +4,9 @@ def procName = 'Gantt Schedule'
 procedure procName, {
 
 	formalParameter "jsonData"
-	formalParameter "ganttName"
+	formalParameter "reportName"
 	
-	def GanttName = '$[ganttName]'?'$[ganttName]':'schedule'
+	def ReportName = '$[reportName]'?'$[reportName]':'schedule'
 
 	step 'Generate schedule',
     	  command: new File(pluginDir, "dsl/procedures/$procName/steps/GenerateSchedule.groovy").text,
@@ -26,17 +26,17 @@ procedure procName, {
 			AddNewLine: '1',
 			Append: '1',
 			Content: '$[/myJob/ganttHtml]',
-			Path: 'artifacts/' + GanttName + '.html'
+			Path: 'artifacts/' + ReportName + '.html'
 		] 
   
     step 'Create Job Link',
         command: """
-			ectool setProperty \"/myJob/report-urls/Report\" \"/commander/jobSteps/\$[/myJobStep/jobStepId]/${GanttName}.html\"
+			ectool setProperty \"/myJob/report-urls/Report\" \"/commander/jobSteps/\$[/myJobStep/jobStepId]/${ReportName}.html\"
 		""".stripIndent()
 		
 	step 'Create Pipeline Link',
 		command: """\
-			ectool setProperty \"/myPipelineStageRuntime/ec_summary/Report\" \"<html><a href=\\\"../commander/jobSteps/\$[/myJobStep/jobStepId]/${GanttName}.html\\\" target=\\\"_blank\\\">Link</a></html>\"
+			ectool setProperty \"/myPipelineStageRuntime/ec_summary/Report\" \"<html><a href=\\\"../commander/jobSteps/\$[/myJobStep/jobStepId]/${ReportName}.html\\\" target=\\\"_blank\\\">Link</a></html>\"
 			""".stripIndent(),
 		condition: '$[/javascript getProperty("/myPipelineStageRuntime")]'
 }

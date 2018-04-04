@@ -40,7 +40,7 @@ documentation : Help text for the parameter
     <formElement>
         <type>entry</type>
         <label>Schedule Name:</label>
-        <property>ganttName</property>
+        <property>reportName</property>
         <required>0</required>
         <documentation>Schedule Name</documentation>
     </formElement>

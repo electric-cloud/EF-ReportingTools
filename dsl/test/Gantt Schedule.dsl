@@ -26,7 +26,7 @@ project "Test", {
 			subprocedure : 'Gantt Schedule',
 			actualParameter : [
 				jsonData: ScheduleData,
-				ganttName: "Test Schedule"
+				reportName: "Test Schedule"
 			]
 	}
 
@@ -38,7 +38,7 @@ project "Test", {
 				subprocedure : 'Gantt Schedule',
 				actualParameter : [
 					jsonData: ScheduleData,
-					ganttName: "Test Schedule"
+					reportName: "Test Schedule"
 				]
 		}
 	}

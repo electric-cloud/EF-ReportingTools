@@ -5,7 +5,7 @@ def ReportTitle = '$[reportName]'?'$[reportName]':'report'
 
 def TableData = new JsonSlurper().parseText '''$[jsonData]'''
 
-def ColumnOrnamentation = new JsonSlurper().parseText '''$[columnOrnamentation]'''contains('[')?'''$[columnOrnamentation]''':'[]'
+def ColumnOrnamentation = new JsonSlurper().parseText '''$[columnOrnamentation]'''.contains('[')?'''$[columnOrnamentation]''':'[]'
 
 //assert TableData.getClass() == "java.util.ArrayList"
 
@@ -34,7 +34,8 @@ html.html {
 		link (rel:'stylesheet', href:'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css', integrity: 'sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp', crossorigin:'anonymous')
     }
     body {
-        mkp.yieldUnescaped('<!--')
+        H1(ReportTitle)
+		mkp.yieldUnescaped('<!--')
         mkp.yield('<test>')
         mkp.yieldUnescaped('-->')
 

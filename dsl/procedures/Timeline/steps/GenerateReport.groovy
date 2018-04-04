@@ -7,11 +7,13 @@ def ReportTitle = '$[reportName]'?'$[reportName]':'report'
 	[
 		{
 			"resource": "string",
+			"label": "string",
 			"startDate":  "YYYY/MM/dd",
 			"endDate": "YYYY/MM/dd"
 		},
 		{
 			"resource": "string",
+			"label": "string",
 			"startDate":  "YYYY/MM/dd",
 			"endDate": "YYYY/MM/dd"
 		}
@@ -28,6 +30,7 @@ GanttData.each { row ->
 	def duration = (endDate - startDate)
 	def outRow = [
 		'"' + row["resource"] + '"',
+		'"' + row["label"] + '"',
 		'new Date(' + startDate + ')',
 		'new Date(' + endDate + ')'
 	]
@@ -53,8 +56,8 @@ html.html {
 				var container = document.getElementById('timeline');
 				var chart = new google.visualization.Timeline(container);
 				var dataTable = new google.visualization.DataTable();
-
-				dataTable.addColumn({ type: 'string', id: 'President' });
+				dataTable.addColumn({ type: 'string', id: 'Resource' });
+				dataTable.addColumn({ type: 'string', id: 'Label' });
 				dataTable.addColumn({ type: 'date', id: 'Start' });
 				dataTable.addColumn({ type: 'date', id: 'End' });
 				dataTable.addRows($dslData);

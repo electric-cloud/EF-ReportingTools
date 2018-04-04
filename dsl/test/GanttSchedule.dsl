@@ -21,7 +21,7 @@ def ScheduleData = '''
 
 project "Test", {
 	procedure "Test - Gantt Schedule",{
-		step 'name',
+		step 'Generate report',
 			subproject : '/plugins/EF-ReportingTools/project',
 			subprocedure : 'Gantt Schedule',
 			actualParameter : [

@@ -23,7 +23,7 @@ col1 | col2 | col3
 123|456
 789|012|345
 
-![Sample Table]("pages/images/Table Sample.PNG")
+![Sample Table](pages/images/TableSample.PNG)
 
 #### Parameters
 jsonData: required, string, JSON array with one or more key-value pairs for each array element
@@ -52,4 +52,4 @@ jsonData: required, string, JSON array with items defined by taskName, startDate
 ```
 ganttName: optional, string, Gantt Chart name to be used as file name as well
 
-![Sample Gantt Chart]("pages/images/Gantt Chart Sample.PNG")
+![Sample Gantt Chart](pages/images/GanttChartSample.PNG)

@@ -25,7 +25,7 @@ jsonData: required, string, JSON array with one or more key-value pairs for each
 reportName: optional, string, report name to be used as file name as well
 
 ### Timeline
-jsonData: required, string, JSON array with items defined by resource, label, startDate, and endData.
+jsonData: required, string, JSON array with items defined by resource, label, startDate, and endData.  Dates should be in YYYY/mm/dd formmat or integer microseconds.
 ```JSON
 [
 	{

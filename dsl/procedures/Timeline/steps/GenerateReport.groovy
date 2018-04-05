@@ -20,14 +20,14 @@ def ReportTitle = '$[reportName]'?'$[reportName]':'report'
 	]
 */
 
-def GanttData = new JsonSlurper().parseText '''$[jsonData]'''
+def ReportData = new JsonSlurper().parseText '''$[jsonData]'''
 
 def dslData = []
 
-GanttData.each { row ->
-	def startDate = new Date(row["startDate"]).getTime()
-	def endDate = new Date(row["endDate"]).getTime()
-	def duration = (endDate - startDate)
+ReportData.each { row ->
+	// Allow either YYYY/MM/dd or integer format
+	def startDate = row["startDate"].getClass()==java.lang.Integer?row["startDate"]:new Date(row["startDate"]).getTime()
+	def endDate = row["endDate"].getClass()==java.lang.Integer?row["endDate"]:new Date(row["endDate"]).getTime()
 	def outRow = [
 		'"' + row["resource"] + '"',
 		'"' + row["label"] + '"',
@@ -71,7 +71,7 @@ html.html {
         mkp.yield('<test>')
         mkp.yieldUnescaped('-->')
 
-        div (id:'timeline', style: "height: 180px;")
+        div (id:'timeline', style: "height: 500px;")
     }
 }
 property "/myJob/reportHtml", value: sb.toString()

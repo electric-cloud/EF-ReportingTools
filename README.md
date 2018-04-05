@@ -87,5 +87,5 @@ Run these DSL files to generate tests for the plugin procedures.  These DSL file
 1. [Simple JSON to Table](dsl/test/json2table.dsl)
 1. [Simple Gantt Chart](dsl/test/GanttSchedule.dsl)
 1. [Simple Resource Timeline](dsl/test/Timeline.dsl)
-1. [Environment and Release Timeline](EnvironmentReleaseTimeline.groovy)
+1. [Environment and Release Timeline](dsl/test/EnvironmentReleaseTimeline.groovy)
 ![Environment and Release Phase timeline](pages/images/EnvironmentReleasePhasesTimeline.PNG)

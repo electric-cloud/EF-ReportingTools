@@ -85,8 +85,12 @@ ganttName: optional, string, Gantt Chart name to be used as file name as well
 ## Test examples
 Run these DSL files to generate tests for the plugin procedures.  These DSL file create both pipelines and procedures in the "Test" project with the same name as the DSL file. Either can be run.  A link to the report will appear on the job and on the pipeline if the pipeline is run.
 1. [Simple JSON to Table](dsl/test/json2table.dsl)
+![TableSample](pages/images/TableSample.PNG)
 1. [Simple Gantt Chart](dsl/test/GanttSchedule.dsl)
+![GanttChartSample](pages/images/GanttChartSample.PNG)
 1. [Simple Resource Timeline](dsl/test/Timeline.dsl)
+![TimelineSample](pages/images/TimelineSample.PNG)
 1. [Environment and Release Timeline](dsl/test/EnvironmentReleaseTimeline.groovy)
-1. [Environment and Release Phase timeline](pages/images/EnvironmentReleasePhasesTimeline.PNG)
-1. [Environment Inventory](dsl/test/EnvironmentInventory.PNG)
+![EnvironmentReleasePhasesTimeline](pages/images/EnvironmentReleasePhasesTimeline.PNG)
+1. [Environment Inventory](dsl/test/EnvironmentInventory.groovy)
+![EnvironmentInventory](pages/images/EnvironmentInventory.PNG)

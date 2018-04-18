@@ -31,12 +31,12 @@ procedure procName, {
   
     step 'Create Job Link',
         command: """
-			ectool setProperty \"/myJob/report-urls/Report\" \"/commander/jobSteps/\$[/myJobStep/jobStepId]/${ReportName}.html\"
+			ectool setProperty \"/myJob/report-urls/${ReportName}\" \"/commander/jobSteps/\$[/myJobStep/jobStepId]/${ReportName}.html\"
 		""".stripIndent()
 		
 	step 'Create Pipeline Link',
 		command: """\
-			ectool setProperty \"/myPipelineStageRuntime/ec_summary/Report\" \"<html><a href=\\\"../commander/jobSteps/\$[/myJobStep/jobStepId]/${ReportName}.html\\\" target=\\\"_blank\\\">Link</a></html>\"
+			ectool setProperty \"/myPipelineStageRuntime/ec_summary/${ReportName}\" \"<html><a href=\\\"../commander/jobSteps/\$[/myJobStep/jobStepId]/${ReportName}.html\\\" target=\\\"_blank\\\">Link</a></html>\"
 			""".stripIndent(),
 		condition: '$[/javascript getProperty("/myPipelineStageRuntime")]'
 }

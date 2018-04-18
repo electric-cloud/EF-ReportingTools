@@ -18,7 +18,7 @@ def TableData = '''
 '''
 
 project "Test", {
-	procedure "Test - json2table",{
+	procedure "Test - json2table", resourceName: 'local', {
 		step 'Generate Report',
 			subproject : '/plugins/EF-ReportingTools/project',
 			subprocedure : 'json2table',

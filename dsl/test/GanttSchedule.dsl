@@ -20,7 +20,7 @@ def ScheduleData = '''
 
 
 project "Test", {
-	procedure "Test - Gantt Schedule",{
+	procedure "Test - Gantt Schedule", resourceName: 'local', {
 		step 'Generate report',
 			subproject : '/plugins/EF-ReportingTools/project',
 			subprocedure : 'Gantt Schedule',

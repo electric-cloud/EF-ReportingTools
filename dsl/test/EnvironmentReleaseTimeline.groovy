@@ -60,7 +60,7 @@ project "Test", {
 	release "June", plannedStartDate: "2018-06-02" , plannedEndDate: "2018-07-01"
 	release "Aug", plannedStartDate: "2018-07-02" , plannedEndDate: "2018-08-01"
 
-	procedure "Environment and Release Timeline",{
+	procedure "Environment and Release Timeline", resourceName: 'local', {
 		step "Gather Data", shell: 'ectool evalDsl --dslFile "{0}" ', command: '''
 			import groovy.json.*
 			def TimelineData = []

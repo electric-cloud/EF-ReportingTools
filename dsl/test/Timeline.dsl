@@ -28,7 +28,7 @@ def TimelineData = '''
 
 
 project "Test", {
-	procedure "Test - Timeline",{
+	procedure "Test - Timeline", resourceName: 'local', {
 		step 'name',
 			subproject : '/plugins/EF-ReportingTools/project',
 			subprocedure : 'Timeline',

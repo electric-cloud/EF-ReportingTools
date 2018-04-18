@@ -18,7 +18,7 @@ Create a table from a JSON string:
 	{
 		"Text": "<b>Bold</b>",
 		"Image": "<img src=\"../../../flow/public/app/assets/img/svg-icons/icon-nodes.svg\" height=\"20\" width=\"20\">",
-		"Link": "<a href=\\\\"../..\\\\">Commander UI</a>"
+		"Link": "<a href=\"../..\">Commander UI</a>"
 	}
 ]
 ```

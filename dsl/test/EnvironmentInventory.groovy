@@ -4,7 +4,7 @@ project "Test", {
 			import groovy.json.*
 			def rows=[]
 			def fields = [
-				//"sprite",
+				"serviceName",
 				"projectName",
 				"environmentName",
 				"artifactName",
@@ -18,13 +18,11 @@ project "Test", {
 						getEnvironmentInventoryItems(projectName: proj.projectName, environmentName: env.environmentName).each { invItem ->
 							def row = [:]
 							fields.each { field ->
-							/*
-								if (field == "sprite") {
-									row[field] = """<span class='sds-svg-icon__container'><svg role='img' aria-label='Microservice' class='sds-svg-icon sds-svg-icon--icon-service sds-svg-icon--no-offset' style='width: 18px; height: 18px; fill: #c563cb  ;'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#icon-service'></use><g><rect class='at-svg-icon-title' x='0' y='0' fill='transparent' stroke='transparent' title='Microservice'></rect></g></svg></span>"""
+								if (field == "serviceName") {
+									row[field] = """<img src=\\\\"../../../flow/public/app/assets/img/svg-icons/icon-service.svg\\\\" height=\\\\"20\\\\" width=\\\\"20\\\\"> """ + invItem[field]
 								} else {
-							*/
 									row[field] = invItem[field]
-							//	}
+								}
 							}
 							rows <<  row
 						}

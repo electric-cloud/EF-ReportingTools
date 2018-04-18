@@ -99,3 +99,7 @@ Run these DSL files to generate tests for the plugin procedures.  These DSL file
 ![EnvironmentReleasePhasesTimeline](pages/images/EnvironmentReleasePhasesTimeline.PNG)
 1. [Environment Inventory](dsl/test/EnvironmentInventory.groovy)
 ![EnvironmentInventory](pages/images/EnvironmentInventory.PNG)
+
+## Plugin Versioning
+* 1.0.0 - Initial
+* 1.1.0 - Support HTML in table (closes #5), add Environment Inventory example (closes #4)

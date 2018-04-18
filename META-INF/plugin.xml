@@ -1,7 +1,7 @@
 <plugin>
   <key>EF-ReportingTools</key>
   <label>EF-ReportingTools</label>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <author>Electric Cloud</author>
   <authorUrl>support@electric-cloud.com</authorUrl>
   <category>Reporting</category>

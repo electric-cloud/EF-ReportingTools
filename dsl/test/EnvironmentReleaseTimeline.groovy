@@ -54,7 +54,7 @@ project "Test", {
 			stage "SIT", plannedStartDate: "2018-05-04", plannedEndDate: "2018-05-10"
 			stage "QA", plannedStartDate: "2018-05-11", plannedEndDate: "2018-05-20"
 			stage "UAT", plannedStartDate: "2018-05-20", plannedEndDate: "2018-05-30"
-			//stage "Production", plannedStartDate: "2018-06-01"
+			stage "Production", plannedStartDate: "2018-06-01"
 		}
 	}
 	release "June", plannedStartDate: "2018-06-02" , plannedEndDate: "2018-07-01"
@@ -83,11 +83,13 @@ project "Test", {
 						"endDate": rel["plannedEndTime"].getTime()          
 					]
 					if (rel.stageCount > 0) getStages(releaseName: rel.releaseName, pipelineName: rel.releaseName).each { stg ->
+						def StartDate = new Date().parse('yyyy-MM-dd\\'T\\'hh:mm:ss.SSS\\'Z\\'', stg.plannedStartDate.toString()).getTime()
+						def EndDate = (stg.plannedEndDate) ? new Date().parse('yyyy-MM-dd\\'T\\'hh:mm:ss.SSS\\'Z\\'', stg.plannedEndDate.toString() ).getTime() : StartDate
 						TimelineData << [
 							"resource": "Release: " + rel["releaseName"],
 							"label": stg.stageName,
-							"startDate": new Date().parse('yyyy-MM-dd\\\'T\\\'hh:mm:ss.SSS\\\'Z\\\'', stg.plannedStartDate.toString()).getTime(),
-							"endDate": new Date().parse('yyyy-MM-dd\\\'T\\\'hh:mm:ss.SSS\\\'Z\\\'', stg.plannedEndDate.toString()).getTime()
+							"startDate": StartDate,
+							"endDate": EndDate
 						]
 					}
 				}

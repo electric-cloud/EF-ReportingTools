@@ -8,7 +8,7 @@ Create a table from a JSON string:
 [
 	{
 		"col1": "123",
-		"col2": "456",
+		"col2": "456"
 	},
 	{
 		"col1": "789",
@@ -17,8 +17,8 @@ Create a table from a JSON string:
 	},
 	{
 		"Text": "<b>Bold</b>",
-		"Image": "<img src=\"../../../flow/public/app/assets/img/svg-icons/icon-nodes.svg\" height=\"20\" width=\"20\">",
-		"Link": "<a href=\"../..\">Commander UI</a>"
+		"Image": "<img src=\\"../../../flow/public/app/assets/img/svg-icons/icon-nodes.svg\\" height=\\"20\\" width=\\"20\\">",
+		"Link": "<a href=\\"../..\\">Commander UI</a>"
 	}
 ]
 ```

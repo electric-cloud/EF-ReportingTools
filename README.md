@@ -22,6 +22,7 @@ Create a table from a JSON string:
 	}
 ]
 ```
+Note the double escapes '\\'; the first is necessary to protect the embedded quotes, the second is needed to protect the escape itself because this JSON is being used to generate a step with DSL.
 
 ![Sample Table](pages/images/TableSample.PNG)
 

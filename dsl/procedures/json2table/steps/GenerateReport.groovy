@@ -30,10 +30,27 @@ html.html {
     head {
         title (ReportTitle)
         script (src: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', type: 'text/javascript', integrity:'sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin:'anonymous')
-		link (rel:'stylesheet', href:'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity: 'sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin:'anonymous')
-		link (rel:'stylesheet', href:'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css', integrity: 'sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp', crossorigin:'anonymous')
+        link (rel:'stylesheet', href:'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity: 'sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin:'anonymous')
+        link (rel:'stylesheet', href:'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css', integrity: 'sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp', crossorigin:'anonymous')
+        
+        style(type:"text/css", ''' body{margin:0;font-family:Arial, Helvetica, sans-serif;}.topnav{overflow:hidden;background-color:#333;}.topnav a{float:left;color:#f2f2f2;text-align:center;padding:10px 16px;text-decoration:none;font-size:17px;} ''')
+ 
+        
+        
+        
+        
+        
     }
     body {
+    
+      div (class:'topnav') {
+      
+          a (href="/flow") {
+            img (src:'/commander/images/logo.gif')
+          }
+        }
+        
+        
         H1(ReportTitle)
 		mkp.yieldUnescaped('<!--')
         mkp.yield('<test>')

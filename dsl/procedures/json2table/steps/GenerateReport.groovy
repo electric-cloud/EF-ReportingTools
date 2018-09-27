@@ -97,7 +97,7 @@ html.html {
     
       div (class:'topnav') {
       
-          a (href="/flow") {
+          a (href:"/flow") {
             img (src:'/commander/images/logo.gif')
           }
         }
@@ -132,7 +132,6 @@ html.html {
                                         td(){mkp.yieldUnescaped contents}
                                     }
                                 }
-
                          }
                         }
                     }
